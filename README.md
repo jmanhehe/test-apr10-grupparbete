@@ -13,7 +13,7 @@ Ni får en färdig webapp skriven i Flask tillsammans med tillhörande dokumenta
    - Enhetstester (med `pytest`) för att uppnå minst 80% testtäckning
    - Integrationstester (med `pytest`) så att alla routes har minst ett test
    - Minst ett systemtest (med `Playwright`)
-5. Logga buggar och dokumentera resultat
+5. Dokumentera hittade buggar
 6. Fixa hittade buggar
 7. Presentera ert arbete och era lärdomar
 
