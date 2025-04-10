@@ -113,6 +113,12 @@ Kör igång applikationen:
 ```bash
 ./local-start.sh
 ```
+
+Om du har Windows, prova Powershell-scriptet:
+```
+.\local-start.ps1
+```
+
 (Se till att ha Docker installerat)
 
 ---
