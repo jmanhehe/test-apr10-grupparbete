@@ -15,3 +15,6 @@ Alla beslut om vilka test som ska göras och skrivas kommer tas av gruppen som h
 ## Verktyg
 Verktyg vi kommer att använda oss av är först och främst VSCode, där vi kommer granska, skriva och testa kod.
 För att testa kod kommer det köras `pytest` och `playwright`.
+Appen körs i `docker`
+Versionshantering `git` och `github`
+Dokumentation kommer föras på `github` med hjälp av markdown filer (`md`).
