@@ -49,8 +49,8 @@ def test_to_text_paragraph_wraps_text_in_p_tags():
     """
     Testar att funktionen to_text_paragraph omsluter texten med korrekta <p>-taggar.
     """
-    text = "Bu bir paragraf metnidir." 
-    expected = "<p>Bu bir paragraf metnidir.</p>\n"
+    text = "Det här är en stycke text." 
+    expected = "<p>Det här är en stycke text.</p>\n"
     actual = to_text_paragraph(text)
     assert actual == expected
 
