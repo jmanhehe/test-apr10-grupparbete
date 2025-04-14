@@ -1,7 +1,7 @@
 from flask import Flask, request
-from .db import get_visit_by_id, add_visit, get_all_visits, init_db, format_visit_history
-from .rendering import format_visit_details, format_welcome_message, format_hello_greeting
-from .html_utils import to_error_message
+from db import get_visit_by_id, add_visit, get_all_visits, init_db, format_visit_history
+from rendering import format_visit_details, format_welcome_message, format_hello_greeting
+from html_utils import to_error_message
 from datetime import datetime
 
 app = Flask(__name__)
