@@ -81,7 +81,8 @@ För alla buggar hittade:
 ```
 test-apr10-grupparbete
 ├── app/                          # Applikationskod
-│   ├── app.py                    # Flask-app och dess routes
+│   ├── main.py                   # Flask-app och dess routes
+|   ├── html_utils.py             # hanterar hur websidan visas.
 │   ├── db.py                     # Databaslogik
 │   └── rendering.py              # Textformatering
 ├── tests/
