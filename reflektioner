@@ -1,0 +1,3 @@
+Titel: Problem med importering av modul-fil
+Problem: Kunde inte hitta modulen vid importing med 'app.rendering' 
+Lösning: var att pytest.ini har en sökväg till app, så kan hänvisa till modulen direkt 'rendering'
