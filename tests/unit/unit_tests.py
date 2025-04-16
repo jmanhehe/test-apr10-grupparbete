@@ -15,8 +15,8 @@ def test_format_welcome_message():
 
 def test_format_visit_history():
     sample_history = [
-        {"id": 1, "timestamp": "2023-10-01 10:00:00"},
-        {"id": 2, "timestamp": "2023-10-02 11:00:00"},
+        {"id": 1, "timestamp": "Fri, 11 Apr 2025 08:25:13 GMT"},
+        {"id": 2, "timestamp": "Fri, 13 Apr 2025 11:35:02 GMT"},
     ]
     expected_output = get_html_start_block("Visits")
     expected_output += to_heading_line("Visit history")
