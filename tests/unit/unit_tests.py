@@ -47,5 +47,14 @@ def test_format_visit_details():
 
     assert actual_output == expected_output
 
+## Test coverage för mitt test så ni kan se hur mycket som täcks
+'''
+Name                Stmts   Miss  Cover   Missing
+-------------------------------------------------
+app/db.py              42     42     0%   1-73
+app/html_utils.py      21      2    90%   36, 44
+app/main.py            44     44     0%   1-61
+app/rendering.py       24      4    83%   28-31
+'''
 
 
