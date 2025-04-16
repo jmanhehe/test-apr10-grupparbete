@@ -26,4 +26,26 @@ def test_format_visit_history():
 
     actual_html = format_visit_history(sample_history)
 
-    assert expected_output in actual_html    
+    assert expected_output in actual_html
+
+def test_format_visit_details():
+    visit = {
+        "id": 42,
+        "timestamp": "Fri, 11 Apr 2025 08:25:13 GMT",
+        "ip": "192.168.1.1",
+        "user_agent": "Mozilla/5.0"
+    }
+
+    expected_output = get_html_start_block("Visit details")
+    expected_output += to_heading_line(f"Visit #{visit['id']}")
+    expected_output += to_text_paragraph(f"When: {visit['timestamp']}")
+    expected_output += to_text_paragraph(f"IP: {visit['ip']}")
+    expected_output += to_text_paragraph(f"User agent: {visit['user_agent']}")
+    expected_output += get_html_end_block()
+
+    actual_output = format_visit_details(visit)
+
+    assert actual_output == expected_output
+
+
+
