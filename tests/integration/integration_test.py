@@ -21,6 +21,16 @@ def db_setup():
     cur.close()
     conn.close()
 
+@pytest.fixture(scope="function")
+def clean_db(db_setup):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute("TRUNCATE visits RESTART IDENTITY")
+    conn.commit()
+    cur.close()
+    conn.close()
+    yield
+
 def test_db_connection():
     conn = get_db_connection()
     try:
