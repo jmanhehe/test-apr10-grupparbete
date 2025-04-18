@@ -63,7 +63,7 @@ def test_init_db(db_setup):
         cur.close()
         conn.close()
 
-def test_add_and_get_visit(db_setup):
+def test_add_and_get_visit(clean_db):
     ip = "127.0.0.1"
     user_agent = "TestUserAgent"
     visit_data = add_visit(ip, user_agent)
