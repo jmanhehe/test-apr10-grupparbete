@@ -1,7 +1,7 @@
 import pytest
 import psycopg2
 
-from db import get_db_connection, init_db, add_visit, get_visit_by_id
+from db import get_db_connection, init_db, add_visit, get_visit_by_id, get_all_visits
 from datetime import datetime, timezone
 
 TEST_IP = "127.0.0.1"
@@ -63,6 +63,10 @@ def test_init_db(db_setup):
         cur.close()
         conn.close()
 
+# def test_add_visit_isolated(db_setup):
+#     # test add visit separate first
+#     visit_data = add_visit(TEST_IP, USER_AGENT)
+
 def test_add_and_get_visit(clean_db):
     ip = "127.0.0.1"
     user_agent = "TestUserAgent"
@@ -82,7 +86,7 @@ def test_add_and_get_visit(clean_db):
     assert specific_visit["id"] == visit_data["id"], "Visit ID doesnt match against specific ID"
     assert specific_visit["ip"] == ip, "IP doesnt match"
     assert specific_visit["user_agent"] == user_agent, "Specific user agent doesnt match"
-    
+
     # Same as above, timestamp needs to be checked at
     # assert specific_visit["timestamp"] == visit_data["timestamp"], "Timestamp does not match"
 
