@@ -85,3 +85,47 @@ def test_add_and_get_visit(clean_db):
     
     # Same as above, timestamp needs to be checked at
     # assert specific_visit["timestamp"] == visit_data["timestamp"], "Timestamp does not match"
+
+
+# This test sometimes pass and sometimes dont,
+# the issue is that sometimes we have 4 entries and not 3 as expected
+# this is because the entries from other tests are still in the db
+# we need to clear the db before running this test
+# wip
+def test_get_all_visits(clean_db):
+    test_visits = [
+        {
+            "ip": "127.0.0.1",
+            "user_agent": "firefox browser 1"
+        },
+        {
+            "ip": "127.0.0.2",
+            "user_agent": "firefox browser 2"
+        },
+        {
+            "ip": "127.0.0.3", 
+            "user_agent": "firefox browser 3"
+        }
+    ]
+
+    added_visits = []
+    for visit in test_visits:
+        visit_data = add_visit(visit["ip"], visit["user_agent"])
+        added_visits.append(visit_data)
+
+    all_visits = get_all_visits()
+
+    assert len(all_visits) == len(test_visits), f"Expected {len(test_visits)} visits, got {len(all_visits)}"
+
+    for added_visit in added_visits:
+        matching_visits = [
+            v for v in all_visits
+            if v["id"] == added_visit["id"]
+            and v["ip"] == added_visit["ip"]
+            and v["user_agent"] == added_visit["user_agent"]
+        ]
+        assert len(matching_visits) == 1, f"Visit with id {added_visit['id']} not found or duplicated"
+
+    visit_ids = [visit["id"] for visit in all_visits]
+    assert visit_ids == sorted(visit_ids), "Visits are not ordered by IDs"
+            
