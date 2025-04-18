@@ -87,11 +87,7 @@ def test_add_and_get_visit(clean_db):
     # assert specific_visit["timestamp"] == visit_data["timestamp"], "Timestamp does not match"
 
 
-# This test sometimes pass and sometimes dont,
-# the issue is that sometimes we have 4 entries and not 3 as expected
-# this is because the entries from other tests are still in the db
-# we need to clear the db before running this test
-# wip
+# This test adds visits and fetches them to check that they match
 def test_get_all_visits(clean_db):
     test_visits = [
         {
