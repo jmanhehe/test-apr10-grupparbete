@@ -1,5 +1,6 @@
 import pytest
 from playwright.sync_api import sync_playwright, expect
+import time
 
 @pytest.fixture(scope="session")
 def browser():
@@ -15,9 +16,11 @@ def test_app_homepage(browser):
     page.goto("http://localhost:5000/hello-form")
 
     input_field = page.get_by_label("Your name:") 
-    input_field.fill("John Doe")
+    name = "John Doe"
+    input_field.fill(f"{name}")
+    time.sleep(1)
 
     page.click("button[type='submit']")
-
+    time.sleep(2)
     greeting = page.locator("body p")
-    expect(greeting).to_have_text("Hello, John Doe!")
+    expect(greeting).to_have_text(f"Hello, {name}!")
