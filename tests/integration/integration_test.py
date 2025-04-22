@@ -1,7 +1,7 @@
 import pytest
 import psycopg2
 
-from db import get_db_connection, init_db, add_visit, get_visit_by_id
+from db import get_db_connection, init_db, add_visit, get_visit_by_id, get_all_visits
 from datetime import datetime, timezone
 
 TEST_IP = "127.0.0.1"
